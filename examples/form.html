@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js">
+    </script>
+  </head>
+  <body ng-app>
+    <h2>Forms</h2>
+    <form name="myForm">
+      email: <input type="email" name="email" ng-model="person.email" required>
+
+      <button>Submit</button>
+      <span ng-hide="myForm.$valid">Fill in a valid email address</span>
+    </form>
+  </body>
+</html>

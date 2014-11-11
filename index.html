@@ -379,6 +379,121 @@ Code: https://github.com/jonotron/angular-intro-workshop
 
 ---
 
+class: center, middle
+
+# Chapter 2
+Core directives
+
+---
+
+# Directives
+
+obvious angular directives (ng-app, ng-repeat,
+ng-model).
+
+not so obvious (form, input)
+
+Directives are reusable components to abstract behaviour, layout, styling, or 
+all three.
+
+---
+
+## Behaviour
+
+`ng-click` adds click handling behaviour to your element. It does not change
+the layout or style of your element.
+
+`ng-submit` adds form submission behaviour to your element.
+
+`ng-model` binds input values to your data model.
+
+---
+
+## Layout/structure
+
+`ng-options` generates `<option>` tags for a select
+
+```html
+<select ng-options="name for person in people">
+</select>
+```
+
+---
+
+## Style
+
+`ng-class` adds CSS classes to an element when conditions are met
+
+```html
+<span ng-class="{strike: todo.done }">{{ todo.text }}</span>
+```
+
+---
+class: center, middle
+
+# Let's look at `form` directives
+
+---
+
+# Form
+
+```html
+<body ng-app>
+  <h2>Forms</h2>
+* <form name="myForm">
+    email: <input type="email" name="email" ng-model="person.email" required>
+
+    <button>Submit</button>
+    <span ng-hide="myForm.$valid">Fill in a valid email address</span>
+  </form>
+</body>
+```
+
+`form` directive enables validation
+
+---
+
+# input[email]
+
+```html
+<body ng-app>
+  <h2>Forms</h2>
+  <form name="myForm">
+*   email: <input type="email" name="email" ng-model="person.email" required>
+
+    <button>Submit</button>
+    <span ng-hide="myForm.$valid">Fill in a valid email address</span>
+  </form>
+</body>
+```
+
+`input[email]` provides basic email validation to the `form`.
+`required` sets the form validation logic to require this field.
+
+---
+
+# Validation 
+
+```html
+<body ng-app>
+  <h2>Forms</h2>
+  <form name="myForm">
+    email: <input type="email" name="email" ng-model="person.email" required>
+
+    <button>Submit</button>
+*   <span ng-hide="myForm.$valid">Fill in a valid email address</span>
+  </form>
+</body>
+```
+
+`myForm` is a variable created by `form` and contains all the validation states
+and functions.
+`ng-hide` is a simple directive to hide the element if the expression evaluates
+to true.
+
+---
+
+
 class: center, large, middle
 
 # Thanks!
