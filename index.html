@@ -403,9 +403,19 @@ all three.
 `ng-click` adds click handling behaviour to your element. It does not change
 the layout or style of your element.
 
+```html
+<button ng-click="doSomething()">Go</button>
+```
+
 `ng-submit` adds form submission behaviour to your element.
+```html
+<form ng-submit="submit()">
+```
 
 `ng-model` binds input values to your data model.
+```html
+<input type="text" ng-model="name">
+```
 
 ---
 
@@ -490,6 +500,63 @@ class: center, middle
 and functions.
 `ng-hide` is a simple directive to hide the element if the expression evaluates
 to true.
+
+---
+
+class: center, middle
+
+# Form
+
+[examples/form.html](examples/form.html)
+
+
+---
+
+#### Basic challenge
+
+* Create a simple signup form with email and single password field
+* The password field should have a minimum of 4 characters
+* It should tell the user if there is an error on the form
+
+**Tip**: You will need `ng-show/hide`. Read API docs for input[email]
+
+#### Intermediate Challenge
+
+* Disable the submit button until the form data is valid
+* Indicate which fields are invalid with an exclamation mark and provide a message
+
+**Tip**: You will need `ng-disabled` and read more about form validation.
+
+#### Advanced Challenge
+
+* When a user is registered, put the new record in an array displayed below the form
+* Clear out the form for the next submission
+
+**Tip**: You might need to read about angular.copy and the angular forms guid
+
+Code: https://github.com/jonotron/angular-intro-workshop
+
+---
+
+class: center, middle
+
+# That's it
+You're now an expert
+
+---
+
+class: center, middle
+
+# Just kidding
+This shit is hard.
+
+---
+
+# Resources:
+
+* Kamloops.js: http://github.com/kamloopsjs/general
+* Angular code school: http://angular.codeschool.com
+* Egghead: http://egghead.io
 
 ---
 
